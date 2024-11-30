@@ -7,6 +7,8 @@ import { APP_VERSION, SWAGGER_PATH } from './common/constants';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.enableCors();
+
   const config = new DocumentBuilder()
     .setTitle(STRINGS.SWAGGER_TITLE)
     .setDescription(STRINGS.SWAGGER_DESCRIPTION)
